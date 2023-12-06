@@ -89,3 +89,19 @@
 </body>
 
 </html>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  fetch('https://clean-framework-378321-default-rtdb.europe-west1.firebasedatabase.app/кошка.json', {
+  method: 'PUT',
+  body: JSON.stringify(3)
+})
+.then(response => {
+  console.log('Данные успешно записаны.');
+})
+.catch(error => {
+  console.error('Ошибка записи данных:', error);
+});
+});
+
+</script>
