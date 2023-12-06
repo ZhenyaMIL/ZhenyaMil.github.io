@@ -92,25 +92,26 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  fetch('https://clean-framework-378321-default-rtdb.europe-west1.firebasedatabase.app/кошка.json', {
+
+  const userData = {
+  "nickname": "username",
+  "themes": ['first', 'second'],
+  "words": ['тест', 'колбаса']
+};
+
+fetch('https://clean-framework-378321-default-rtdb.europe-west1.firebasedatabase.app/userData.json', {
   method: 'PUT',
-  body: JSON.stringify(44)
+  body: JSON.stringify(userData)
 })
 .then(response => {
-  console.log('Данные успешно записаны.');
+  console.log('Данные успешно отправлены!!!!.');
 })
 .catch(error => {
-  console.error('Ошибка записи данных:', error);
-});
+  console.error('Ошибка отправки данных:', error);
 });
 
-fetch('https://clean-framework-378321-default-rtdb.europe-west1.firebasedatabase.app/кошка.json')
-.then(response => response.json())
-.then(data => {
-  console.log('Значение "кошка":', data);
-})
-.catch(error => {
-  console.error('Ошибка получения данных:', error);
 });
+
+
 
 </script>
