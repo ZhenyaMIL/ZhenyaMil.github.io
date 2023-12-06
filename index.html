@@ -104,4 +104,13 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 });
 
+fetch('https://clean-framework-378321-default-rtdb.europe-west1.firebasedatabase.app/кошка.json')
+.then(response => response.json())
+.then(data => {
+  console.log('Значение "кошка":', data);
+})
+.catch(error => {
+  console.error('Ошибка получения данных:', error);
+});
+
 </script>
