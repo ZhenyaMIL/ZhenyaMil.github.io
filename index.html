@@ -6,112 +6,197 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="./style.css">
+  <script src="https://kit.fontawesome.com/152e123fd9.js" crossorigin="anonymous"></script>
+
 </head>
 
 <body>
-  <header>
-    <div class="wrapper-header page-width">
-      <div class="logo">
-        <img loading="lazy" src="./assets/logo.png" alt="logo">
-      </div>
-      <div class="premium-button">
-        <p>Premium</p>
-      </div>
+  <div class="left-decoration decor-elements">
+    <div class="image-wrapper">
+      <img src="./assets/palm-left-t.png" alt="Top part of a palm tree" loading="lazy">
     </div>
-  </header>
-  <main>
-    <div class="wrapper-theme-blocks">
-        <div id="0" class="theme-block">
-          <div class="status">
-            <img loading="lazy" src="./assets/done.png" alt="logo">
-          </div>
-          <img loading="lazy" src="./assets/crescent-moon.png" alt="logo">
-          <p class="theme-name">Як сказати надобраніч</p>
-        </div>
-        <div id="1" class="theme-block">
-          <div class="status">
-            <img loading="lazy" src="./assets/done.png" alt="logo">
-          </div>
-          <img loading="lazy" src="./assets/travel-luggage.png" alt="logo">
-          <p class="theme-name">Подорожі</p>
-        </div>
-        <div id="2" class="theme-block">
-          <div class="status">
-            <img loading="lazy" src="./assets/done.png" alt="logo">
-          </div>
-          <img loading="lazy" src="./assets/thirteen.png" alt="logo">
-          <p class="theme-name">Дні тижня</p>
-        </div>
-        <div id="3" class="theme-block">
-          <div class="status">
-            <img loading="lazy" src="./assets/done.png" alt="logo">
-          </div>
-          <img loading="lazy" src="./assets/translation.png" alt="logo">
-          <p class="theme-name">Ідіоми</p>
-        </div>
-        <div id="4" class="theme-block">
-          <div class="status">
-            <img loading="lazy" src="./assets/done.png" alt="logo">
-          </div>
-          <img loading="lazy" src="./assets/clown.png" alt="logo">
-          <p class="theme-name">Гумор</p>
-        </div>
-
-        <div class="more-button theme-block">
-          <img src="./assets/plus.png" alt="">
-          <p class="theme-name">Як додати теми?</p>
-        </div>
-
+    <div class="image-wrapper">
+      <img src="./assets/palm-left-m.png"" alt="Middle part of a palm tree" loading="lazy">
     </div>
-    <div id="display-container">
-      <div class="header">
-        <div class="number-of-count">
-          <span class="number-of-question">1 з 3</span>
-        </div>
-        <div class="timer-div">
-          <img src="https://uxwing.com/wp-content/themes/uxwing/download/time-and-date/stopwatch-icon.png" width="20px" />
-          <span class="time-left">10 сек</span>
-        </div>
-      </div>
-      <div id="container">
-        <!-- questions and options will be displayed here -->
-      </div>
-      <button id="next-button">Далі</button>
+    <div class="image-wrapper">
+      <img src="./assets/palm-left-b.png"" alt="Bottom part of a palm tree" loading="lazy">
     </div>
-    <div class="score-container hide">
-      <div id="user-score">Demo Score</div>
-      <button id="finish">Завершити</button>
+  </div>
+  <div class="right-decoration decor-elements">
+    <div class="image-wrapper">
+      <img src="./assets/palm-right-t.png" alt="Top part of a palm tree" loading="lazy">
     </div>
-  </main>
-  <footer></footer>
-  <script src="./data.js"></script>
-  <script src="./script.js"></script>
-</body>
-
+    <div class="image-wrapper">
+      <img src="./assets/palm-right-m.png"" alt="Middle part of a palm tree" loading="lazy">
+    </div>
+    <div class="image-wrapper">
+      <img src="./assets/palm-right-b.png"" alt="Bottom part of a palm tree" loading="lazy">
+    </div>
+  </div>
+  <div class="themes-container">
+    <!-- Вставьте сюда круги для каждой темы -->
+  </div>
 </html>
 
 <script>
-document.addEventListener('DOMContentLoaded', function() {
+  document.addEventListener('DOMContentLoaded', function () {
+    const data = {
+      "strings_array": [
+       {
+          "theme": "comics",
+          "font_icon": "fa-solid fa-lightbulb",
+          "words": ["cat", "dog"],
+          "translate_words": ["кошка", "собака"]
+        },
+        {
+          "theme": "movies",
+          "font_icon": "fa-solid fa-child",
+          "words": ["bird", "rabbit"],
+          "translate_words": ["птица", "кролик"]
+        },
+        {
+          "theme": "games",
+          "font_icon": "fa-solid fa-plane",
+          "words": ["superhero", "villain"],
+          "translate_words": ["супергерой", "злодей"]
+        }
+      ],
+      "usernames_array": [{
+          "userId": "user1",
+          "themes_display": [{
+              "theme": "comics",
+              "display": true,
+              "progress": [0.3, 0.5, 0.8]
+            },
+            {
+              "theme": "movies",
+              "display": false,
+              "progress": [0.3, 0.4, 0.4]
+            },
+            {
+              "theme": "games",
+              "display": true,
+              "progress": [0.1, 0.9, 0.2]
+            }
+          ]
+        },
+        {
+          "userId": "user-8Wl9Y",
+          "themes_display": [{
+              "theme": "comics",
+              "display": true,
+              "progress": [0.2, 0.2, 0.2]
+            },
+            {
+              "theme": "movies",
+              "display": true,
+              "progress": [0.1, 0.1, 0.1]
+            },
+            {
+              "theme": "games",
+              "display": true,
+              "progress": [0.9, 0.9, 0.9]
+            }
+          ]
+        }
+      ]
+    }
 
-  const userData = {
-  "nickname": "username",
-  "themes": ['first', 'second'],
-  "words": ['тест', 'колбаса']
-};
+    function generateUserId() {
+      let result = 'user-';
+      const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+      const charactersLength = characters.length;
 
-fetch('https://clean-framework-378321-default-rtdb.europe-west1.firebasedatabase.app/userData.json', {
-  method: 'PUT',
-  body: JSON.stringify(userData)
-})
-.then(response => {
-  console.log('Данные успешно отправлены!!!!.');
-})
-.catch(error => {
-  console.error('Ошибка отправки данных:', error);
-});
+      for (let i = 0; i < 5; i++) {
+        result += characters.charAt(Math.floor(Math.random() * charactersLength));
+      }
 
-});
+      return result;
+    }
+
+    // Функция для проверки наличия пользователя в локальном хранилище
+    function checkLocalStorage() {
+      const storedUserId = localStorage.getItem('userId');
+
+      if (storedUserId) {
+        console.log(`С возвращением: ${storedUserId}`);
+      } else {
+        const newUserId = generateUserId();
+        localStorage.setItem('userId', newUserId);
+        console.log(`Ваш уникальный никнейм: ${newUserId}`);
+      }
+    }
+
+    // Вызов функции при загрузке страницы для проверки наличия пользователя в локальном хранилище
+    checkLocalStorage();
 
 
+    // Получаем userId из локального хранилища (localStorage) или источника данных
+    const userId = "user-8Wl9Y"; // Замените это на фактическое получение userId
 
+    // Функция для получения всех тем, которые нужны пользователю по их userId
+    function getNeededThemesForUser(userId, data) {
+      const user = data.usernames_array.find((user) => user.userId === userId);
+
+      if (!user) {
+        console.error("Пользователь не найден");
+        return [];
+      }
+
+      const userThemes = user.themes_display.filter((theme) => theme.display);
+      const allThemes = data.strings_array;
+
+      const neededThemes = userThemes.map((userTheme) => {
+        const foundTheme = allThemes.find((theme) => theme.theme === userTheme.theme);
+        if (foundTheme) {
+          return foundTheme;
+        } else {
+          console.warn(`Тема ${userTheme.theme} не найдена`);
+          return null;
+        }
+      });
+
+      return neededThemes.filter((theme) => theme !== null);
+    }
+
+    // Получаем все темы, которые нужны пользователю по их userId
+    const neededThemesForUser = getNeededThemesForUser(userId, data);
+    console.log("Темы, которые нужны пользователю:", neededThemesForUser);
+
+    // Находим контейнер, в который будем добавлять круги с названиями тем
+    const themesContainer = document.querySelector('.themes-container');
+
+    // Создаем круги для каждой темы и добавляем их в контейнер
+    neededThemesForUser.forEach(theme => {
+      const themeCircle = document.createElement('div');
+      themeCircle.classList.add('theme-circle');
+
+      // Создаем иконку на основе класса font_icon
+      const icon = document.createElement('i');
+      const class_font_icon = theme.font_icon;
+
+      // Проверка наличия пробелов в строке с классами
+      if (class_font_icon.indexOf(' ') !== -1) {
+        // Если пробелы есть, разделяем строку на отдельные классы и добавляем их циклом
+        let classNames = class_font_icon.split(' ');
+
+        classNames.forEach(function (className) {
+          icon.classList.add(className);
+        });
+      } else {
+        // Если пробелов нет, просто добавляем класс к элементу
+        icon.classList.add(class_font_icon);
+      }
+
+      themeCircle.appendChild(icon);
+
+      const themeName = document.createElement('div');
+      themeName.classList.add('theme-name');
+      themeName.textContent = theme.theme;
+
+      themeCircle.appendChild(themeName);
+      themesContainer.appendChild(themeCircle);
+    });
+
+  });
 </script>

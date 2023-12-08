@@ -1,0 +1,61 @@
+{
+  "strings_array": [
+    {
+       "theme": "comics",
+       "font_icon": "fa-solid fa-lightbulb",
+       "words": ["cat", "dog"],
+       "translate_words": ["кошка", "собака"]
+     },
+     {
+       "theme": "movies",
+       "font_icon": "fa-solid fa-child",
+       "words": ["bird", "rabbit"],
+       "translate_words": ["птица", "кролик"]
+     },
+     {
+       "theme": "games",
+       "font_icon": "fa-solid fa-plane",
+       "words": ["superhero", "villain"],
+       "translate_words": ["супергерой", "злодей"]
+     }
+   ],
+   "usernames_array": [{
+       "userId": "user1",
+       "themes_display": [{
+           "theme": "comics",
+           "display": true,
+           "progress": [0.3, 0.5, 0.8]
+         },
+         {
+           "theme": "movies",
+           "display": false,
+           "progress": [0.3, 0.4, 0.4]
+         },
+         {
+           "theme": "games",
+           "display": true,
+           "progress": [0.1, 0.9, 0.2]
+         }
+       ]
+     },
+     {
+       "userId": "user-8Wl9Y",
+       "themes_display": [{
+           "theme": "comics",
+           "display": true,
+           "progress": [0.2, 0.2, 0.2]
+         },
+         {
+           "theme": "movies",
+           "display": true,
+           "progress": [0.1, 0.1, 0.1]
+         },
+         {
+           "theme": "games",
+           "display": true,
+           "progress": [0.9, 0.9, 0.9]
+         }
+       ]
+     }
+   ]
+}

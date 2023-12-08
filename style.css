@@ -1,221 +1,95 @@
-/* General */
-.page-width {
-  padding: 0 2rem;
-}
-
-body * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  min-height: 100vh;
-  background: #FFD79C;
-  font-family: system-ui;
-  padding: 80px;
-  background: #7474BF;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #348AC7, #7474BF);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #348AC7, #7474BF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #FFD090;
+  font-family: 'Font Awesome 6 Free';
 }
 
-.wrapper-header {
-  min-height: 60px;
-  background: #0000006b;
-  position: fixed;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
-  margin-left: -80px;
-  margin-top: -80px;
-  z-index: 1;
-}
-
-.logo img {
-  width: 50px;
-  border-radius: 50%;
-}
-
-.premium-button p {
-  background: black;
-  color: white;
-  padding: 6px 10px;
-  border-radius: 12px;
-}
-
-.theme-block {
+/* Стили для кругов */
+.theme-circle {
   position: relative;
-  background: white;
-  width: 40vw;
-  height: 40vw;
-  max-width: 160px;
-  max-height: 160px;
+  width: 100px;
+  /* Задайте ширину кругляшка */
+  height: 100px;
+  /* Задайте высоту кругляшка */
+  background-color: white;
+  /* Белая заливка */
   border-radius: 50%;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  /* Делаем круги */
   display: flex;
+  flex-direction: column;
+  gap: .5rem;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
-  margin: 3rem auto;
-  padding: 1rem;
-  flex-direction: column;
-  row-gap: 6px;
-  cursor: pointer;
+  margin-bottom: 30px;
+  /* Расстояние между кругами */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  /* Тень для эффекта поднятости */
 }
 
-.theme-block .status img {
-  width: 100%;
-}
-
-.theme-block.approved .status {
-  width: 25px;
+.theme-circle:after {
   position: absolute;
-  top: 6px;
-  right: 16px;
-  display: flex;
-}
+  content: "";
+  border: 2px dashed #4747db;
+  height: 30px;
+  bottom: 0;
+  left: 50%;
+  color: white;
+  transform: translate(-50%, 100%);}
 
-.theme-block.approved {
-  background: #e7f6d5;
-}
-
-.theme-block .status {
+.theme-circle:last-child:after {
   display: none;
 }
 
 
-.theme-block p {
-  text-align: center;
-  max-width: 80%;
+.theme-circle i {
+  font-size: 2.5rem;
+  color: #4747db;
 }
 
-.theme-block img {
-  width: 50%;
+/* Стили для текста внутри кругов */
+.theme-name {
+  font-size: 12px;
+  color: black;
 }
 
+.themes-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 3rem;
+}
 
+.image-wrapper img {
+  max-width: 240px;
+}
 
+.image-wrapper {
+  width: 40%;
+}
 
+.decor-elements {
+  position: fixed;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  /* align-items: flex-start; */
+  justify-content: space-between;
+}
 
+.decor-elements.left-decoration {
+  left:0;
+}
 
-.start-screen,
-  .score-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background:white ;
+.decor-elements.right-decoration {
+  right:0;
+}
+
+@media only screen and (max-width: 768px) {
+  .image-wrapper img {
+    max-width: 160px;
   }
 
-  button {
-    border: none;
-    outline: none;
-    cursor: pointer;
-  }
-
-  #start-button,
-  #finish {
-    font-size: 1.3em;
-    padding: 0.5em 1.8em;
-    border-radius: 0.2em;
-    background: #ffd79c;
-  }
-
-  #finish {
-    margin-top: 0.9em;
-  }
-
-  #display-container {
-    background-color: #ffffff;
-    padding: 5.1em 1.8em;
-    width: 100vw;
-    height: 100vh;
-    margin: 0 auto;
-    position: fixed;
-    transform: translate(-50%, -50%);
-    top: 50%;
-    left: 50%;
-  }
-
-  .header {
-    margin-bottom: 1.8em;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-bottom: 0.6em;
-    border-bottom: 0.1em solid #c0bfd2;
-  }
-
-  .timer-div {
-    background: linear-gradient(to right, #348AC7, #7474BF);
-    width: 7.5em;
-    border-radius: 1.8em;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0.7em 1.8em;
-  }
-
-  .question {
-    margin-bottom: 1.25em;
-    font-weight: 600;
-  }
-
-  .option-div {
-    font-size: 0.9em;
-    width: 100%;
-    padding: 1em;
-    margin: 0.3em 0;
-    text-align: left;
-    outline: none;
-    background: transparent;
-    border: 1px solid #c0bfd2;
-    border-radius: 0.3em;
-  }
-
-  .option-div:disabled {
-    color: #000000;
-    cursor: not-allowed;
-  }
-
-  #next-button {
-    font-size: 1em;
-    margin-top: 1.5em;
-    background: linear-gradient(to right, #348AC7, #7474BF);
-    color: #ffffff;
-    padding: 0.7em 1.8em;
-    border-radius: 0.3em;
-    float: right;
-    color: black;
-  }
-
-  .hide {
-    display: none;
-  }
-
-  .incorrect {
-    background-color: #ffdde0;
-    color: #d32f2f;
-    border-color: #ffdde0;
-  }
-
-  .correct {
-    background-color: #e7f6d5;
-    color: #689f38;
-    border-color: #e7f6d5;
-  }
-
-  #user-score {
-    font-size: 1.5em;
-    color: black;
-  }
+}
