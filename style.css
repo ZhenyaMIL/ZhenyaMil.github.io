@@ -36,7 +36,8 @@ body {
   bottom: 0;
   left: 50%;
   color: white;
-  transform: translate(-50%, 100%);}
+  transform: translate(-50%, 100%);
+}
 
 .theme-circle:last-child:after {
   display: none;
@@ -80,16 +81,153 @@ body {
 }
 
 .decor-elements.left-decoration {
-  left:0;
+  left: 0;
+  display: none;
 }
 
 .decor-elements.right-decoration {
-  right:0;
+  right: 0;
+  display: none;
 }
+
+  /* Стили для текстового поля ввода */
+  input[type="text"] {
+    width: 100%;
+    text-align: center;
+    border: none;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    background-color: white;
+    padding: 8px;
+    font-size: 16px;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+    height: 60px;
+  }
+
 
 @media only screen and (max-width: 768px) {
   .image-wrapper img {
     max-width: 160px;
   }
 
+}
+
+/* Стили для квадратиков с буквами */
+.letter-box {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  margin: 7px;
+  background-color: white;
+  border: 1px solid #ccc;
+  text-align: center;
+  line-height: 40px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  /* тень */
+}
+
+.letter-box p {
+  margin: 0;
+}
+
+.letter-box[data-value="0"] * {
+  display: none;
+}
+
+/* Стили для чисел повторений */
+.count {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  top: -12px;
+  right: -12px;
+  font-size: 12px;
+  color: white;
+  background-color: #4747db;
+  padding: 0;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+#inputField {
+  font-weight: bold;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+}
+
+#inputField.green-highlight {
+  background: #90bb69;
+  color: white;
+}
+
+#inputField.red-highlight {
+  background: #f87053;
+  color: white;
+}
+
+.input-wrapper {
+  display: flex;
+  width: 80%;
+  margin: 0 auto;
+}
+
+#uniqueLetters {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+#removeLetterBtn img {
+  width: 30px;
+  height: 30px;
+}
+
+#removeLetterBtn  {
+  background: white;
+  border: none;
+  border-top-right-radius: 5px; /* Закругление левого верхнего угла */
+  border-bottom-right-radius: 5px; /* Закругление левого нижнего угла */
+  transition: all 0.3s ease-in-out;
+}
+
+
+.learning-block{
+  position: absolute;
+  z-index: 1;
+  width: 80%;
+  max-width: 600px;
+  background-color: #f9f9f9;
+  padding: 30px;
+  border-radius: 10px;
+  transform: translate(-50%, 0);
+  bottom: -20px;
+  left: 50%;
+  min-height: 70vh;
+  transition: all 0.3s ease-in-out;
+}
+
+.learning-block.hide {
+  bottom: -120%;
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  cursor: pointer;
+  font-size: 20px;
+  color: black;
+}
+
+.theme-circle {
+  /* Стили для элементов с классом theme-circle */
+  cursor: pointer;
 }
